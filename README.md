@@ -1073,3 +1073,726 @@ mindmap
 
 
 
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+mindmap
+    root((Full Stack Development))
+        Frontend
+            HTML5
+                Semantic HTML
+                Accessibility
+            CSS3
+                Flexbox
+                Grid
+                Tailwind
+            JavaScript
+                ES6+
+                React
+                State Management
+        Backend
+            Python
+                Django
+                Flask
+            Node.js
+                Express
+                NestJS
+            Databases
+                PostgreSQL
+                MongoDB
+                Redis
+        DevOps
+            Docker
+            Kubernetes
+            CI/CD
+            AWS
+        Security
+            Authentication
+            Authorization
+            OWASP
+            Encryption
+```
+
+---
+
+SECTION 11: TIMELINE DIAGRAMS
+
+11.1 BASIC TIMELINE
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+timeline
+    title Company History
+    1992 : Founded
+    1995 : First Office
+    1998 : International Expansion
+    2003 : IPO
+    2007 : First Acquisition
+```
+
+11.2 PROJECT ROADMAP
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+timeline
+    title Product Roadmap 2025
+    section Q1
+        January : Market Research
+        February : Prototype
+        March : User Testing
+    section Q2
+        April : MVP Development
+        May : Beta Release
+        June : Feedback Collection
+    section Q3
+        July : Feature Enhancements
+        August : Security Audit
+        September : Performance Optimization
+    section Q4
+        October : Public Launch
+        November : Marketing Campaign
+        December : Post-Launch Review
+```
+
+---
+
+SECTION 12: SANKEY DIAGRAMS
+
+12.1 BASIC SANKEY
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+sankey-beta
+    Sources, Destinations
+    Salary, Rent, 1500
+    Salary, Food, 600
+    Salary, Transport, 300
+    Salary, Savings, 500
+```
+
+12.2 ENERGY FLOW
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+sankey-beta
+    Energy Sources, End Uses
+    Solar, Residential, 400
+    Solar, Commercial, 200
+    Wind, Residential, 300
+    Wind, Industrial, 250
+    Coal, Industrial, 500
+    Gas, Commercial, 350
+    Gas, Residential, 150
+    Nuclear, Industrial, 400
+```
+
+---
+
+SECTION 13: XY CHARTS
+
+13.1 LINE CHART
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+xyChart
+    x-axis [Jan, Feb, Mar, Apr, May, Jun]
+    y-axis "Sales ($K)" 0 --> 100
+    line "Product A" [20, 25, 30, 35, 40, 45]
+    line "Product B" [15, 18, 22, 28, 35, 42]
+```
+
+13.2 SCATTER PLOT
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+xyChart
+    x-axis "Study Hours" 0 --> 40
+    y-axis "Exam Score" 0 --> 100
+    scatter "Students" [5, 52]
+    scatter "Students" [10, 65]
+    scatter "Students" [15, 70]
+    scatter "Students" [20, 78]
+    scatter "Students" [25, 85]
+    scatter "Students" [30, 88]
+    scatter "Students" [35, 92]
+    scatter "Students" [40, 95]
+```
+
+---
+
+SECTION 14: C4 ARCHITECTURE DIAGRAMS
+
+14.1 SYSTEM CONTEXT (LEVEL 1)
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+C4Context
+    title System Context - Online Banking
+    
+    Person(customer, "Customer", "Bank customer")
+    System(banking, "Banking System", "Handles accounts")
+    System_Ext(payment, "Payment Gateway", "Processes payments")
+    
+    Rel(customer, banking, "Uses")
+    Rel(banking, payment, "Processes via")
+```
+
+14.2 CONTAINER DIAGRAM (LEVEL 2)
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+C4Container
+    title Container Diagram - Online Banking
+    
+    Person(user, "User")
+    
+    System_Boundary(app, "Application") {
+        Container(web, "Web App", "React", "UI")
+        Container(api, "API", "Node.js", "Backend")
+        Container(db, "Database", "PostgreSQL", "Storage")
+    }
+    
+    Rel(user, web, "Uses")
+    Rel(web, api, "Calls")
+    Rel(api, db, "Reads/Writes")
+```
+
+---
+
+SECTION 15: REQUIREMENT DIAGRAMS
+
+15.1 BASIC REQUIREMENT
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+requirementDiagram
+    requirement Login {
+        id: 1
+        text: User must be able to log in
+        risk: medium
+        verifymethod: test
+    }
+```
+
+15.2 COMPLETE REQUIREMENTS
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+requirementDiagram
+    requirement Auth {
+        id: AUTH-1
+        text: User authentication required
+        risk: high
+        verifymethod: test
+    }
+    
+    requirement Password {
+        id: AUTH-2
+        text: Password must be 8+ characters
+        risk: medium
+        verifymethod: review
+    }
+    
+    requirement MFA {
+        id: AUTH-3
+        text: Multi-factor authentication
+        risk: critical
+        verifymethod: demonstration
+    }
+    
+    element AuthSystem {
+        type: module
+    }
+    
+    Auth - satisfies -> AuthSystem
+    Password - contains -> Auth
+    MFA - refines -> Auth
+```
+
+---
+
+SECTION 16: BLOCK DIAGRAMS
+
+16.1 BASIC BLOCK
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+block-beta
+    columns 3
+    A[Input] B[Process] C[Output]
+```
+
+16.2 SYSTEM ARCHITECTURE
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+block-beta
+    columns 5
+    
+    User["User Browser"]:5
+    
+    space
+    
+    LB["Load Balancer"]:3
+    FW["Firewall"]:2
+    
+    space
+    
+    Web1["Web Server 1"]:2
+    Web2["Web Server 2"]:2
+    Web3["Web Server 3"]:1
+    
+    space
+    
+    DB1["Primary DB"]:2
+    DB2["Replica DB"]:3
+    
+    User --> LB
+    LB --> FW
+    FW --> Web1
+    FW --> Web2
+    FW --> Web3
+    Web1 --> DB1
+    Web2 --> DB1
+    Web3 --> DB1
+    DB1 --> DB2
+```
+
+---
+SECTION 17: QUADRANT CHARTS
+
+17.1 BASIC QUADRANT
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+quadrantChart
+    title Priority Matrix
+    x-axis Low Priority --> High Priority
+    y-axis Low Urgency --> High Urgency
+    quadrant-1 Do First
+    quadrant-2 Schedule
+    quadrant-3 Delegate
+    quadrant-4 Eliminate
+```
+
+17.2 WITH DATA POINTS
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+quadrantChart
+    title Task Prioritization
+    x-axis Low Value --> High Value
+    y-axis Low Effort --> High Effort
+    
+    quadrant-1 Quick Wins
+    quadrant-2 Major Projects
+    quadrant-3 Fill-ins
+    quadrant-4 Time Sinks
+    
+    Task A: [0.85, 0.30]
+    Task B: [0.75, 0.70]
+    Task C: [0.40, 0.85]
+    Task D: [0.20, 0.25]
+    Task E: [0.60, 0.55]
+```
+
+---
+
+SECTION 18: USER JOURNEY MAPS
+
+18.1 BASIC JOURNEY
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+journey
+    title Coffee Shop Visit
+    section Arrival
+        Find parking: 3: Customer
+        Enter shop: 5: Customer
+    section Order
+        Browse menu: 4: Customer
+        Place order: 5: Customer
+    section Enjoy
+        Taste coffee: 5: Customer
+        Relax: 4: Customer
+```
+
+18.2 COMPLETE CUSTOMER JOURNEY
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+journey
+    title E-Commerce Customer Journey
+    section Discovery
+        See ad: 4: Customer
+        Visit website: 5: Customer
+        Browse products: 4: Customer
+        Read reviews: 5: Customer
+    
+    section Consideration
+        Compare prices: 4: Customer
+        Check shipping: 3: Customer
+        Add to cart: 5: Customer
+    
+    section Purchase
+        Enter details: 3: Customer
+        Complete payment: 5: Customer
+        Receive confirmation: 5: Customer
+    
+    section Delivery
+        Tracking updates: 4: Customer
+        Receive package: 5: Customer
+        Unboxing: 5: Customer
+    
+    section Post-Purchase
+        Product usage: 4: Customer
+        Write review: 4: Customer
+        Repeat purchase: 5: Customer
+```
+
+---
+
+SECTION 19: ADVANCED STYLING
+
+19.1 BASIC STYLING
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+graph TD
+    A[Styled Box]
+    style A fill:#2196F3,stroke:#0B5E7E,stroke-width:3px,color:white
+```
+
+19.2 CLASS DEFINITIONS
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+graph TD
+    A[Start]
+    B[Process]
+    C{Decision}
+    D[End]
+    
+    class A start
+    class B process
+    class C decision
+    class D end
+    
+    classDef start fill:#4CAF50,stroke:#2E7D32,color:white
+    classDef process fill:#2196F3,stroke:#0B5E7E,color:white
+    classDef decision fill:#FF9800,stroke:#E65100,color:white
+    classDef end fill:#9C27B0,stroke:#4A0072,color:white
+```
+
+19.3 BORDER STYLES
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+graph TD
+    A[Solid Border]
+    B[Dashed Border]
+    C[Dotted Border]
+    D[Thick Border]
+    
+    style A stroke:#FF0000,stroke-width:2px
+    style B stroke:#2196F3,stroke-width:2px,stroke-dasharray:5
+    style C stroke:#4CAF50,stroke-width:2px,stroke-dasharray:2
+    style D stroke:#FF9800,stroke-width:5px
+```
+
+19.4 COMPLETE PROFESSIONAL DESIGN
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#4CAF50',
+  'primaryTextColor': '#fff',
+  'primaryBorderColor': '#2E7D32',
+  'secondaryColor': '#2196F3',
+  'tertiaryColor': '#FF9800'
+}}}%%
+graph TD
+    subgraph User["User Layer"]
+        A[Web App]
+        B[Mobile App]
+    end
+    
+    subgraph API["API Layer"]
+        C[API Gateway]
+        D[Auth Service]
+    end
+    
+    subgraph Data["Data Layer"]
+        E[(Database)]
+        F[(Cache)]
+    end
+    
+    A --> C
+    B --> C
+    C --> D
+    C --> E
+    D --> E
+    D --> F
+    
+    classDef user fill:#4CAF50,stroke:#2E7D32,color:white
+    classDef api fill:#2196F3,stroke:#0B5E7E,color:white
+    classDef data fill:#9C27B0,stroke:#4A0072,color:white
+    
+    class A,B user
+    class C,D api
+    class E,F data
+```
+
+---
+
+SECTION 20: THEMES & CONFIGURATION
+
+20.1 BUILT-IN THEMES
+
+TEXT VIEW (Default Theme):
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+graph TD
+    A[Default Theme]
+```
+
+TEXT VIEW (Dark Theme):
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+graph TD
+    A[Dark Theme]
+```
+
+TEXT VIEW (Forest Theme):
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'forest'}}%%
+graph TD
+    A[Forest Theme]
+```
+
+TEXT VIEW (Base Theme):
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'base'}}%%
+graph TD
+    A[Base Theme]
+```
+
+20.2 CUSTOM THEME VARIABLES
+
+TEXT VIEW:
+
+ACTIVE VIEW:
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'background': '#1a1a2e',
+  'primaryColor': '#0f3460',
+  'primaryTextColor': '#e94560',
+  'primaryBorderColor': '#e94560',
+  'lineColor': '#e94560',
+  'secondaryColor': '#16213e',
+  'tertiaryColor': '#533483'
+}}}%%
+graph TD
+    A[Custom Theme]
+    B[Primary Color]
+    C[Secondary Color]
+    A --> B
+    A --> C
+```
+
+---
+
+SECTION 21: MOBILE APPLICATION
+
+21.1 APP OVERVIEW
+
+Mermaid Live Editor – MMChart
+
+Available on: Google Play Store
+Developer: Termux Studio LLC
+
+TEXT VIEW - App Screenshot Reference:
+
+Key Features:
+
+· Real-time preview with split-screen view
+· Full syntax highlighting
+· Support for all 25+ diagram types
+· Offline mode (no internet required)
+· Export to PNG, JPEG, WebP, SVG, PDF
+· Open and edit .mmd files directly
+· Template library for quick starts
+· Dark mode support
+
+---
+
+SECTION 22: PLATFORM SUPPORT
+
+22.1 WHERE MERMAID RENDERS
+
+Platform Support Level Notes
+GitHub Full README, Wikis, Issues, PRs
+GitLab Full All markdown locations
+Notion Full Mermaid block
+Obsidian Full Plugin or built-in
+Confluence Via add-on Marketplace plugin
+Jira Via add-on Third-party integration
+Slack Via app Mermaid Slack app
+Discord Via bot Mermaid bot available
+VS Code Extension Markdown Preview Mermaid Support
+IntelliJ Built-in Markdown support
+
+22.2 GITHUB INTEGRATION
+
+TEXT VIEW - README.md Example:
+
+ACTIVE VIEW - What renders on GitHub:
+
+```mermaid
+graph TD
+    A[Frontend] --> B[Backend]
+    B --> C[Database]
+```
+
+---
+
+SECTION 23: TROUBLESHOOTING
+
+23.1 COMMON SYNTAX ERRORS
+
+Error Cause Solution
+Diagram not rendering Missing code block Use  ```mermaid  wrapper
+Unexpected arrow Wrong arrow syntax Use --> not ->
+Text not showing Missing quotes Use ["multi-word text"]
+Colors not applying Wrong color format Use fill:#FF0000 not fill:red
+
+23.2 DEBUGGING TECHNIQUES
+
+Step 1: Validate Syntax
+
+1. Copy code to mermaid.live
+2. Check for red error indicators
+3. Fix syntax issues
+
+Step 2: Simplify
+
+1. Remove styling
+2. Reduce to minimal example
+3. Add elements back one by one
+
+Step 3: Check Platform
+
+1. Ensure platform supports Mermaid
+2. Check for platform-specific limitations
+3. Export as image if needed
+
+---
+
+SECTION 24: CREDITS & LICENSING
+
+24.1 PROJECT CREDITS
+
+Guide Author: XIBS
+Repository: xibsx/mermaid
+Based on: Mermaid.js (Open Source)
+Mermaid.js License: MIT
+App Developer: Termux Studio LLC
+
+24.2 VERSION HISTORY
+
+Version Date Changes
+1.0 2024 Initial release
+2.0 2025 Complete rewrite, 20+ sections, 200+ examples
+
+24.3 LICENSE
+
+This guide is provided under the MIT License. You may freely use, copy, modify, and distribute this guide with attribution to XIBS.
+
+---
+
+<p align="center">
+  <strong>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</strong><br>
+  <strong>⭐ STAR THIS REPOSITORY ⭐</strong><br>
+  <strong>Your support helps others discover this guide</strong><br>
+  <strong>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</strong>
+</p>
+
+<p align="center">
+  <sub>XIBS — Technology for Community</sub><br>
+  <sub>© 2025 XIBS Documentation Series</sub>
+</p>
